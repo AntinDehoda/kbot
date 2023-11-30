@@ -1,7 +1,7 @@
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=antinonimus
+REGISTRY=us-central1-docker.pkg.dev-docker.pkg.dev/buoyant-climate-272814/devops-cours-docker-repo
 TARGETARCH=$(shell dpkg --print-architecture)
 
 format:
@@ -15,7 +15,7 @@ get:
 	go get
 build:  format get
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/AntinDehoda/kbot/cmd.appVersion=${VERSION}
-image:
+image: 
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
