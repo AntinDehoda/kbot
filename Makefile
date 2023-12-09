@@ -18,21 +18,21 @@ remove:
 build:  format get
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="${REPO}=${VERSION}
 image: 
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-darwin --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 macos: 
 	TARGETARCH=darwin TARGETOS=amd64 \
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-darwin --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 linux: 
 	TARGETARCH=linux TARGETOS=amd64 \
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-darwin --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 arm: 
 	TARGETARCH=linux TARGETOS=arm \
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-darwin --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}
 windows: 
 	TARGETARCH=windows TARGETOS=amd64 \
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-darwin --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}	
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} --build-arg TARGETARCH=${TARGETARCH} --build-arg TARGETOS=${TARGETOS}	
 clean: 
 	rm -rf kbot; \
 	IMG=$$(docker images -q | head -n 1); \
