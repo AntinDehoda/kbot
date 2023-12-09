@@ -2,7 +2,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 TARGETARCH=$(shell dpkg --print-architecture)
 TARGETOS=amd64
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=us-central1-docker.pkg.dev-docker.pkg.dev/buoyant-climate-272814/devops-cours-docker-repo
+REGISTRY=us-central1-docker.pkg.dev/buoyant-climate-272814/devops-cours-docker-repo
 REPO=github.com/AntinDehoda/kbot/cmd.appVersion
 
 format:
