@@ -3,15 +3,14 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   registry: ghcr.io
   repository: antindehoda
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.1-7ea093f"
-  arch: amd64
-  os: linux
+  tag: "v1.0.2-ccd82e5"
+  arch: ""
+  os: ""
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
