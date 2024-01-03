@@ -14,6 +14,8 @@ jobs:
           fetch-depth: 0
       - name: Run test
         run: make test
+      - name: Log in to registry
+        run: echo "${{ secrets.SECRET_KBOT_2 }}" | docker login ghcr.io -u $ --password-stdin        
       - name: Build&Push
         env:
           APP: "kbot"
