@@ -14,8 +14,12 @@ jobs:
           fetch-depth: 0
       - name: Run test
         run: make test
-      - name: Log in to registry
-        run: echo "${{ secrets.SECRET_KBOT_2 }}" | docker login ghcr.io -u $ --password-stdin        
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.SECRET_KBOT_2 }}      
       - name: Build&Push
         env:
           APP: "kbot"
