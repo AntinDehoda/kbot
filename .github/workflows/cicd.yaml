@@ -26,7 +26,7 @@ jobs:
       - name: Build&Push
         env:
           APP: "kbot"
-        run: make image push
+        run: make image push TARGETARCH=$TARGETARCH
   cd:
     name: CD
     needs: ci
