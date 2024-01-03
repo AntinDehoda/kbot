@@ -8,10 +8,9 @@ image:
   repository: antindehoda
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-
   tag: v1.0.2-54be12c
-  os: ""
-  arch: ""
+  os: "amd64"
+  arch: "linux"
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
