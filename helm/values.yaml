@@ -5,11 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: antinonimus
+  registry: ghcr.io
+  repository: antindehoda
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1.0.1-7ea093f"
   arch: amd64
+  os: linux
 secret:
   name: "kbot"
   env: "TELE_TOKEN"
   key: "token"
+securityContext:
+  privileged: true
