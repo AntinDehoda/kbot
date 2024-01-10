@@ -17,5 +17,5 @@ else
   exit 1
 
 fi
-git config gitleaks.enable=true
+git config gitleaks.enable true
 echo "Gitleaks installed!"
