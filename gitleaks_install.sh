@@ -6,7 +6,7 @@ os=$(uname)
 # Install git
 if [ "$os" = "Linux" ]; then
   pip install pre-commit
-  curl -X GET --data-binary @payload.yaml -H "Content-type: text/x-yaml" https://raw.githubusercontent.com/AntinDehoda/kbot/gitleaks/.pre-commit-config.yaml
+  curl -X GET --data-binary @payload.yaml -H "Content-type: text/x-yaml" https://raw.githubusercontent.com/AntinDehoda/kbot/gitleaks/.pre-commit-config.yaml  >> .pre-commit-config.yaml
   pre-commit autoupdate
   pre-commit install
 elif [ "$os" = "Darwin" ]; then
