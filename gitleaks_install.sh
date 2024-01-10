@@ -6,7 +6,7 @@ os=$(uname)
 # Install git
 if [ "$os" = "Linux" ]; then
   pip install pre-commit
-  curl https://github.com/AntinDehoda/kbot/.pre-commit-config.yaml -L -O
+  curl https://raw.githubusercontent.com/AntinDehoda/kbot/develop/.pre-commit-config.yaml -L -O
   pre-commit autoupdate
   pre-commit install
 elif [ "$os" = "Darwin" ]; then
