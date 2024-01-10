@@ -8,7 +8,7 @@ image:
   repository: antindehoda
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: v1.0.2-191b47b
+  tag: v1.0.2-6f0a253
   os: "linux"
   arch: "amd64"
 secret:
