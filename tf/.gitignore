@@ -1,0 +1,37 @@
+# Terraform tfstate files
+*.tfstate
+*.tfstate.bak
+
+# Crash log files
+crash.log
+
+# Exclude all .tfvars files, which likely contain sensitive data
+*.tfvars
+
+# Exclude override files as they likely contain sensitive data
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Exclude CLI configuration files
+.terraformrc
+terraform.rc
+
+# Exclude secret files
+secrets.tfvars
+
+# Exclude API keys file
+.env
+
+# Exclude SSH keys
+*.pem
+*.pub
+
+# Exclude TLS/SSL keys and certificates
+*.key
+*.crt 
+*.ca
+
+# Ignore any .tfplan files that may contain sensitive data
+*.tfplan
