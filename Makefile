@@ -1,6 +1,6 @@
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETARCH=$(shell dpkg --print-architecture)
-TARGETOS=amd64
+TARGETARCH=amd64
+TARGETOS=linux
 APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=ghcr.io/antindehoda
 REPO=github.com/AntinDehoda/kbot/cmd.appVersion
